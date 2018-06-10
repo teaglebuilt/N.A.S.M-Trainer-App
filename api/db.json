@@ -1,0 +1,374 @@
+{
+    "users": {
+          "userId": 1,
+          "name": "Dillan Teagle",
+          "email": "dillanteagle@teaglebuilt.com",
+          "password": "Dexter4212",
+          "height": "6ft",
+          "weight": "215lbs",
+          "goalId": 2
+},
+
+"goals": {
+    "stabilzation": {
+        "goalId": 1,
+        "name": "Stabilization"
+    },
+    "hypertrophy": {
+        "goalId": 2,
+        "name": "hypertrophy"
+    },
+    "strength": {
+        "goalId": 3,
+        "name": "strength"
+    },
+    "power": {
+        "goalId": 4,
+        "name": "power"
+    }
+
+},
+
+"stabilizationWorkOuts": {
+    "id": 1,
+    "goalId": 1
+},
+
+"hypertrophyWorkouts": {
+        "id": 2,
+        "goalId": 2,
+
+        "chest": {
+                "benchPress": {
+                    "id": 1,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+
+                "inclinePress": {
+                    "id": 2,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+
+                "butterflys": {
+                    "id": 3,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "push-ups": {
+                    "id": 4,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "cable-flys": {
+                    "id": 5,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "wide-press-chest": {
+                    "id": 6,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                }
+            },
+        "back": {
+                "pull-ups": {
+                "id": 1,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+            },
+                "lat-pull-downs": {
+                    "id": 2,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "dumbell-rows": {
+                "id": 3,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+            },
+                "cable-rows": {
+                    "id": 4,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                }
+            },
+
+        "shoulders": {
+                "militaryPress": {
+                    "id": 1,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "lateralRaises": {
+                    "id": 2,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "rearDeltsRaises": {
+                    "id": 3,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "shrugs": {
+                    "id": 4,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+                "uprightRows": {
+                    "id": 5,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                }
+            },
+
+        "legs": {
+                "legPress": {
+                    "id": 1,
+                    "userId": 1,
+                    "reps": "",
+                    "weight": ""
+                },
+            "squat": {
+                "id": 2,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+            },
+            "legCurls": {
+                "id": 3,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+            },
+            "legExtentions": {
+                "id": 4,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+        },
+        "straightLegDeadLifts": {
+                "id": 5,
+                "userId": 1,
+                "reps": "",
+                "weight": ""
+            },
+        "hamstringCurls": {
+            "id": 6,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        },
+        "calfRaises": {
+            "id": 7,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+            }
+        },
+
+    "arms": {
+            "tricepExtensions": {
+             "id": 1,
+             "userId": 1,
+             "reps": "",
+             "weight": ""
+            },
+            "bicepCurls": {
+            "id": 2,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        },
+            "barBellCurls": {
+            "id": 3,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        },
+            "preacherCurls": {
+            "id": 4,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        },
+            "overHeadTricep": {
+            "id": 5,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        },
+            "dumbellKickBacks": {
+            "id": 6,
+            "userId": 1,
+            "reps": "",
+            "weight": ""
+        }
+      }
+    },
+
+
+"strengthWorkouts": {
+         "strengthId": 3,
+          "goalId": 3,
+        "legsStrength": {
+                "sledSprints": {
+                    "id": 1,
+                    "userId": "",
+                    "distance": "",
+                    "reps": "",
+                    "time": ""
+                },
+                "singleLegSquats": {
+                    "id": 2,
+                    "userId": "",
+                    "reps": ""
+                },
+                "dumbellSquats": {
+                    "id": 3,
+                    "userId": "",
+                    "reps": "",
+                    "weight": ""
+                }
+            },
+
+    "shouldersStrength": {
+             "kettleBellCleanPress": {
+                "id": 1,
+                "userId": "",
+                "sets": "",
+                "weight": ""
+            },
+            "kettleBellHighPulls": {
+                "id": 2,
+                "userId": "",
+                "sets": "",
+                "weight": ""
+            }
+        },
+
+         "backStrength": {
+                "barBellRows": {
+                    "id": 1,
+                    "userId": "",
+                    "sets": "",
+                    "weight": ""
+                },
+                "seatedCableRow": {
+                    "id": 2,
+                    "userId": "",
+                    "sets": "",
+                    "weight": ""
+                }
+            },
+
+        "totalBodyStrength": {
+                    "lungeToTwoArmDumbellPress": {
+                    "id": 1,
+                    "userId": "",
+                    "sets": "",
+                    "weight": ""
+                    },
+                    "squatToTwoArmPress": {
+                    "id": 2,
+                    "userId": "",
+                    "sets": "",
+                    "weight": ""
+                    }
+                },
+
+        "chestStrength": {
+                    "barBenchPress": {
+                    "id": 1,
+                    "userId": "",
+                    "sets": "",
+                    "weight": ""
+            }
+        }
+     },
+
+"powerWorkOuts": {
+        "powerId": 4,
+        "goalId": 4,
+    "corePower": {
+        "rotationChestPress": {
+            "id": 1,
+            "userId": "",
+            "reps": ""
+          },
+        "frontMBObliqueThrow": {
+            "id": 2,
+            "userId": "",
+            "reps": ""
+        }
+     },
+
+     "chestPower": {
+         "twoArmMBChestPass": {
+             "id": 1,
+             "userId": "",
+             "reps": ""
+         },
+         "rotatingChestPass": {
+             "id": 2,
+             "userId": "",
+             "reps": ""
+         }
+     },
+
+     "backPower": {
+        "ballMBPullOverThrow": {
+            "id": 1,
+            "userId": "",
+            "reps": ""
+        },
+        "woodChopThrow": {
+            "id": 2,
+            "userId": "",
+            "reps": ""
+        }
+     },
+
+    "shoulderPower": {
+        "medicineBallScoopToss": {
+            "id": 1,
+            "userId": "",
+            "reps": ""
+        },
+        "medicineBallSideObliqueThrow": {
+            "id": 2,
+            "userId": "",
+            "reps": ""
+        }
+    },
+
+    "legPower": {
+        "squatJump": {
+            "id": 1,
+            "userId": "",
+            "reps": ""
+        },
+        "tuckJump": {
+            "id": 2,
+            "userId": "",
+            "reps": ""
+        }
+    }
+  }
+}
