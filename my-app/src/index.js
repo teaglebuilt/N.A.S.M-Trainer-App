@@ -51,7 +51,7 @@ const $ = require('jquery')
 //     return obj;
 // }
 
-$.get("https://wger.de/api/v2/exercise/?muscles=1&equipment=3/language/2", r => {
+$.get("https://wger.de/api/v2/exerciseinfo/", r => {
 
     console.log(r)
 })

@@ -183,7 +183,7 @@
             }
         },
 
-    "arms": {
+    "hypertrophyArms": {
             "tricepExtensions": {
              "id": 1,
              "userId": 1,
@@ -277,21 +277,6 @@
                     "weight": ""
                 }
             },
-
-        "totalBodyStrength": {
-                    "lungeToTwoArmDumbellPress": {
-                    "id": 1,
-                    "userId": "",
-                    "sets": "",
-                    "weight": ""
-                    },
-                    "squatToTwoArmPress": {
-                    "id": 2,
-                    "userId": "",
-                    "sets": "",
-                    "weight": ""
-                    }
-                },
 
         "chestStrength": {
                     "barBenchPress": {
