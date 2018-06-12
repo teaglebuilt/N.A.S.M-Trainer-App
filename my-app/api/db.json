@@ -1,0 +1,696 @@
+{
+    "user": [
+        {
+           "id": 1,
+           "firstName": "Dillan",
+           "lastName": "Teagle",
+           "email": "dillanteagle@teaglebuilt.com",
+           "password": "Dexter4212",
+           "height": "",
+           "weight": ""
+        }
+    ],
+    "goal": [
+        {
+            "id": 1,
+            "goalName": "Stabilization Endurance",
+            "goalDescr": ""
+        },
+        {
+            "id": 2,
+            "goalName": "Strength Endurance",
+            "goalDescr": ""
+        },
+        {
+            "id": 3,
+            "goalName": "Hypertrophy",
+            "goalDescr": ""
+        },
+        {
+            "id": 4,
+            "goalName": "Power",
+            "goalDescr": ""
+        }
+    ],
+    "exercise": [
+        {
+            "id": 1,
+            "exerciseName": "Ball Squat",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 2,
+            "exerciseName": "Multiplanar step up to balance",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 3,
+            "exerciseName": "Supine ball dumbell tricep extension",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 4,
+            "exerciseName": "Prone ball dumbell tricep extension",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 5,
+            "exerciseName": "Single leg dumbell curl",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 6,
+            "exerciseName": "Single leg barbell curl",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 7,
+            "exerciseName": "Single-leg dumbell scaption",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 8,
+            "exerciseName": "Seated stability ball military press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 9,
+            "exerciseName": "Standing cable row",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 10,
+            "exerciseName": "Ball dumbell row",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 11,
+            "exerciseName": "Ball dumbell chest press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 12,
+            "exerciseName": "Push-up",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 13,
+            "exerciseName": "Floor prone cobra",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 14,
+            "exerciseName": "Floor bridge",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 15,
+            "exerciseName": "Leg Press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 16,
+            "exerciseName": "Barbell Squat",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 17,
+            "exerciseName": "Cable Pushdown",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 18,
+            "exerciseName": "Barbell tricep extension",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 19,
+            "exerciseName": "Dumbell biceps curl",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 20,
+            "exerciseName": "Bicep curl machine",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 21,
+            "exerciseName": "Seated dumbell shoulder press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 22,
+            "exerciseName": "Shoulder press machine",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 23,
+            "exerciseName": "Seated cable row",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 24,
+            "exerciseName": "Lat pull down",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 25,
+            "exerciseName": "Dumbell bench press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 26,
+            "exerciseName": "Barbell bench press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 27,
+            "exerciseName": "Ball crunch",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 28,
+            "exerciseName": "Reverse crunch",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 29,
+            "exerciseName": "Decline weighted sit ups",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 30,
+            "exerciseName": "Machine crunches",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 31,
+            "exerciseName": "Barbell Squat",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 32,
+            "exerciseName": "Dumbell lunges",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 33,
+            "exerciseName": "Dumbell Rows",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 34,
+            "exerciseName": "Barbell Rows",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 35,
+            "exerciseName": "Dumbell Shrugs",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 36,
+            "exerciseName": "Dumbell deltoid raises",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 37,
+            "exerciseName": "Cable chest flys",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 38,
+            "exerciseName": "Decline bench press",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 39,
+            "exerciseName": "Cable curls",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 40,
+            "exerciseName": "Skull crushers",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 6
+        },
+        {
+            "id": 41,
+            "exerciseName": "Front MB oblique throw",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 42,
+            "exerciseName": "Ab twist",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 1
+        },
+        {
+            "id": 43,
+            "exerciseName": "Deadlift",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 44,
+            "exerciseName": "Tuck Jump",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 2
+        },
+        {
+            "id": 45,
+            "exerciseName": "MB pullover throw",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 46,
+            "exerciseName": "Wood chop throw",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 3
+        },
+        {
+            "id": 47,
+            "exerciseName": "MB scoop toss",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 48,
+            "exerciseName": "MB side oblique throw",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 4
+        },
+        {
+            "id": 49,
+            "exerciseName": "Two arm MB toss",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        },
+        {
+            "id": 50,
+            "exerciseName": "Rotating chest pass",
+            "exerciseDescr": "",
+            "exerciseImageURL": "",
+            "categoryId": 5
+        }
+],
+    "goalExercises": [
+        {
+            "id": 1,
+            "exerciseId": 1,
+            "goalId": 1
+        },
+        {
+            "id": 2,
+            "exerciseId": 2,
+            "goalId": 1
+        },
+        {
+            "id": 3,
+            "exerciseId": 3,
+            "goalId": 1
+        },
+        {
+            "id": 4,
+            "exerciseId": 4,
+            "goalId": 1
+        },
+        {
+            "id": 5,
+            "exerciseId": 5,
+            "goalId": 1
+        },
+        {
+            "id": 6,
+            "exerciseId": 6,
+            "goalId": 1
+        },
+        {
+            "id": 7,
+            "exerciseId": 7,
+            "goalId": 1
+        },
+        {
+            "id": 8,
+            "exerciseId": 8,
+            "goalId": 1
+        },
+        {
+            "id": 9,
+            "exerciseId": 9,
+            "goalId": 1
+        },
+        {
+            "id": 10,
+            "exerciseId": 10,
+            "goalId": 1
+        },
+        {
+            "id": 11,
+            "exerciseId": 11,
+            "goalId": 1
+        },
+        {
+            "id": 12,
+            "exerciseId": 12,
+            "goalId": 1
+        },
+        {
+            "id": 13,
+            "exerciseId": 13,
+            "goalId": 1
+        },
+        {
+            "id": 14,
+            "exerciseId": 14,
+            "goalId": 1
+        },
+        {
+            "id": 15,
+            "exerciseId": 15,
+            "goalId": 2
+        },
+        {
+            "id": 16,
+            "exerciseId": 16,
+            "goalId": 2
+        },
+        {
+            "id": 17,
+            "exerciseId": 17,
+            "goalId": 2
+        },
+        {
+            "id": 18,
+            "exerciseId": 18,
+            "goalId": 2
+        },
+        {
+            "id": 19,
+            "exerciseId": 19,
+            "goalId": 2
+        },
+        {
+            "id": 20,
+            "exerciseId": 20,
+            "goalId": 2
+        },
+        {
+            "id": 21,
+            "exerciseId": 21,
+            "goalId": 2
+        },
+        {
+            "id": 22,
+            "exerciseId": 22,
+            "goalId": 2
+        },
+        {
+            "id": 23,
+            "exerciseId": 23,
+            "goalId": 2
+        },
+        {
+            "id": 24,
+            "exerciseId": 24,
+            "goalId": 2
+        },
+        {
+            "id": 25,
+            "exerciseId": 25,
+            "goalId": 2
+        },
+        {
+            "id": 26,
+            "exerciseId": 26,
+            "goalId": 2
+        },
+        {
+            "id": 27,
+            "exerciseId": 27,
+            "goalId": 2
+        },
+        {
+            "id": 28,
+            "exerciseId": 28,
+            "goalId": 2
+        },
+        {
+            "id": 29,
+            "exerciseId": 29,
+            "goalId": 3
+        },
+        {
+            "id": 30,
+            "exerciseId": 30,
+            "goalId": 3
+        },
+        {
+            "id": 31,
+            "exerciseId": 31,
+            "goalId": 3
+        },
+        {
+            "id": 32,
+            "exerciseId": 32,
+            "goalId": 3
+        },
+        {
+            "id": 33,
+            "exerciseId": 33,
+            "goalId": 3
+        },
+        {
+            "id": 34,
+            "exerciseId": 34,
+            "goalId": 3
+        },
+        {
+            "id": 35,
+            "exerciseId": 35,
+            "goalId": 3
+        },
+        {
+            "id": 36,
+            "exerciseId": 36,
+            "goalId": 3
+        },
+        {
+            "id": 37,
+            "exerciseId": 37,
+            "goalId": 3
+        },
+        {
+            "id": 38,
+            "exerciseId": 38,
+            "goalId": 3
+        },
+        {
+            "id": 39,
+            "exerciseId": 39,
+            "goalId": 3
+        },
+        {
+            "id": 40,
+            "exerciseId": 40,
+            "goalId": 3
+        },
+        {
+            "id": 41,
+            "exerciseId": 41,
+            "goalId": 4
+        },
+        {
+            "id": 42,
+            "exerciseId": 42,
+            "goalId": 4
+        },
+        {
+            "id": 43,
+            "exerciseId": 43,
+            "goalId": 4
+        },
+        {
+            "id": 44,
+            "exerciseId": 44,
+            "goalId": 4
+        },
+        {
+            "id": 45,
+            "exerciseId": 45,
+            "goalId": 4
+        },
+        {
+            "id": 46,
+            "exerciseId": 46,
+            "goalId": 4
+        },
+        {
+            "id": 47,
+            "exerciseId": 47,
+            "goalId": 4
+        },
+        {
+            "id": 48,
+            "exerciseId": 48,
+            "goalId": 4
+        },
+        {
+            "id": 49,
+            "exerciseId": 49,
+            "goalId": 4
+        },
+        {
+            "id": 50,
+            "exerciseId": 50,
+            "goalId": 4
+        }
+    ],
+    "workout": [
+        {
+            "id": 1,
+            "userId": 1,
+            "workoutName": "first nasm workout",
+            "workoutDate": ""
+        }
+    ],
+    "workoutHasExercise": [
+        {
+            "id": 1,
+            "workoutId": 1,
+            "exerciseId": 1
+        },
+        {
+            "id": 2,
+            "workoutId": 1,
+            "exerciseId": 2
+        },
+        {
+            "id": 3,
+            "workoutId": 1,
+            "exerciseId": 3
+        }
+    ],
+    "category": [
+        {
+            "id": 1,
+            "categoryName": "Core",
+            "categoryDescr": ""
+        },
+        {
+            "id": 2,
+            "categoryName": "Legs",
+            "categoryDescr": ""
+        },
+        {
+            "id": 3,
+            "categoryName": "Back",
+            "categoryDescr": ""
+        },
+        {
+            "id": 4,
+            "categoryName": "Shoulders",
+            "categoryDescr": ""
+        },
+        {
+            "id": 5,
+            "categoryName": "Chest",
+            "categoryDescr": ""
+        },
+        {
+            "id": 6,
+            "categoryName": "Arms",
+            "categoryDescr": ""
+        }
+    ]
+  }
