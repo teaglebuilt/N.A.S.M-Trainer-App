@@ -1,21 +1,43 @@
 import React, { Component } from 'react';
+import '../styles/navbar.css'
 import fire from '../config/fire'
+import NavBar from './NavBar';
+import WorkoutForm from '../createWorkout/WorkoutForm'
+import WorkoutCard from '../createWorkout/WorkoutCard'
+
+
 
 class Home extends Component {
     constructor(props) {
         super(props)
-        this.logout = this.logout.bind(this)
+
+        this.state = {
+            show: false,
+            selected: []
+        }
     }
 
-    logout() {
-        fire.auth().signOut()
-    }
+
+    showForm = function () {
+        this.setState({ show: true })
+    }.bind(this)
+
+    setSelectedState = function (data) {
+    this.setState({selected: data})
+    }.bind(this)
+
+    onCreate= function() {
+        let workoutArray = this.state.selected
+        console.log(workoutArray)
+        }.bind(this)
+
     render() {
         return(
-            <div>
-                <h1>You are Home</h1>
-                <button onClick={this.logout}>Log Out</button>
-            </div>
+        <div>
+            <NavBar showForm={this.showForm} />
+            <WorkoutForm setSelectedState={this.setSelectedState} selected={this.state.selected} onCreate={this.onCreate} showForm={this.showForm}  show={this.state.show} />
+         </div>
+
         )
     }
 }

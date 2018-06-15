@@ -1,10 +1,23 @@
+.login-page {
+
+}
 .loginContainer {
     margin: 0 auto;
-    border: 1px solid black;
     height: 500px;
-    width: 25%;
+    position: absolute;
+    top: 20%;
+    bottom: 25%;
+    left: 40%;
+
 }
 
 .loginForm {
    text-align: center;
+   width: 500px;
+}
+.form-group {
+padding: 20px;
+}
+.form-control {
+    width: 400px;
 }

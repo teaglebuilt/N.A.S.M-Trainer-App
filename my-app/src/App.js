@@ -3,6 +3,7 @@ import './App.css';
 import Login from './auth/Login'
 import Home from './dashboard/Home'
 import fire from './config/fire'
+import WorkoutForm from './createWorkout/WorkoutForm';
 
 class App extends Component {
 

@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 import fire from '../config/fire'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
+
 
 
 class Login extends Component {
@@ -83,42 +87,59 @@ componentDidMount(){
 
 
 render() {
+
+
+
         return (
-         <div className="loginContainer">
+            <div className="login-page">
+
+            <div className="loginContainer">
             <form onSubmit={this.handleSubmit} className="loginForm">
-                <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+               <Typography variant='display1' align='center' gutterBottom>
+                Login
+               </Typography>
+
                 <div className="form-group">
-                <label>Email Address</label>
-                <input value={this.state.email} onChange={this.handleChange} type="" name="email" className="form-control" placeholder="Enter Email" />
+
+        <TextField margin="normal" value={this.state.email} onChange={this.handleChange}
+                floatingLabelText="E-mail" name="email"
+                className="form-control" placeholder="Enter Email"
+                hintText="Email" floatingLabelTextFixed />
+                </div>
+
+
+                <div className="form-group">
+                <TextField margin="normal" value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter Password" />
+                </div>
+
+                <Button variant="contained" color="primary" className="btn btn-lg btn-primary btn-block" type="submit" onClick={this.login}>Sign in</Button>
+                <Typography variant='display1' align='center' gutterBottom>
+                Create Account
+               </Typography>
+
+                <div className="form-group">
+                    <TextField margin="normal" value={this.state.firstName} onChange={this.handleChange} type="firstName" name="firstName" className="form-control" placeholder="First Name" />
                 </div>
                 <div className="form-group">
-                <label>Password</label>
-                <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter Password" />
-                </div>
-                <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={this.login}>Sign in</button>
-                <h1 className="h3 mb-3 font-weight-normal">Or create an account</h1>
-                <div className="form-group">
-                <label>First Name</label>
-                <input value={this.state.firstName} onChange={this.handleChange} type="firstName" name="firstName" className="form-control" placeholder="First Name" />
+                    <TextField margin="normal" value={this.state.lastName} onChange={this.handleChange} type="lastName" name="lastName" className="form-control" placeholder="Last Name" />
                 </div>
                 <div className="form-group">
-                <label>Last Name</label>
-                <input value={this.state.lastName} onChange={this.handleChange} type="lastName" name="lastName" className="form-control" placeholder="Last Name" />
+                  <TextField margin="normal" value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter Email" />
                 </div>
                 <div className="form-group">
-                <label>Email Address</label>
-                <input value={this.state.email} onChange={this.handleChange} type="email" name="email" className="form-control" placeholder="Enter Email" />
+                   <TextField margin="normal"value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter Password" />
                 </div>
-                <div className="form-group">
-                <label>Password</label>
-                <input value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter Password" />
-                </div>
-                <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+
+
+                    <Button variant="contained" color="primary" className="authBtn" type="submit" containedPrimary>Sign up</Button>
                 <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
             </form>
+            </div>
           </div>
         )
     }
 }
 
 export default Login
+

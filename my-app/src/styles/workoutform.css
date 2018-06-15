@@ -1,0 +1,33 @@
+.create-form {
+    width: 25%;
+    border: 1px inset;
+    margin: 0 auto;
+    height: 400px;
+    position: absolute;
+    top: 20%;
+    bottom: 25%;
+    left: 35%;
+    border-radius: 10%;
+    padding: 50px;
+}
+
+.dual {
+    padding: 20px;
+}
+
+
+.goalSelect {
+    padding: 20px;
+}
+
+.label {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.createWorkout {
+    margin-right: 10px;
+    float: right;
+}
+
+
