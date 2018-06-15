@@ -9,7 +9,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import IconButton from '@material-ui/core/IconButton'
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import 'typeface-roboto'
-import WorkoutCard from '../createWorkout/WorkoutCard'
+import Dashboard from '../dashboard/Dashboard';
 import NavBar from '../dashboard/NavBar';
 import Home from '../dashboard/Home'
 
@@ -103,7 +103,7 @@ onChange= function(selected) {
 
         return(
             <div>
-                {this.props.show ?  <form className="create-form">
+                <form className="create-form" id="boxshadow">
                 <IconButton onClick={this.props.onCreate} size="small" variant="contained" color="primary">
                   <ArrowBack size="large" />
                 </IconButton>
@@ -112,7 +112,7 @@ onChange= function(selected) {
             </div>
             <div className="goalSelect">
             <label className="label">Select your Goal</label>
-            <select onChange={this.handleChange}>
+            <select onChange={this.handleChange} className="goal-dropdown">
              {this.state.goals.map((index) => (
                  <option value={index.id}>{index.goalName}</option>
                   ))}
@@ -120,7 +120,9 @@ onChange= function(selected) {
             </div>
                 <div className="dual">
 
-                    <DualListBox selected={this.props.selected} onChange={this.onChange} options={this.state.selectedExercise.map( index => ({
+                    <DualListBox selected={this.props.selected}
+                    onChange={this.onChange}
+                    options={this.state.selectedExercise.map( index => ({
                         value: index,
                         label: index
                     }) )}
@@ -128,9 +130,12 @@ onChange= function(selected) {
 
                </div>
                <div className="createWorkout">
-                    <Button onClick={this.props.onCreate} size="small" variant="contained" color="primary">Create Workout</Button>
+                    <Button onClick={this.props.onCreate}
+                     logWorkout={this.props.logWorkout}
+                     size="small" variant="contained"
+                     color="primary" raised>Create Workout</Button>
                </div>
-            </form> : null }
+            </form>
 
             </div>
         )

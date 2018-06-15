@@ -13,7 +13,7 @@ import Menu from '@material-ui/core/Menu';
 import AddIcon from '@material-ui/icons/Add';
 import fire from '../config/fire'
 import Home from '../dashboard/Home'
-import WorkoutForm from '../createWorkout/WorkoutForm'
+import WorkoutForm from '../dashboard/WorkoutForm'
 
 const styles = {
   root: {

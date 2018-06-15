@@ -1,0 +1,18 @@
+.log-container {
+    border: 1px solid black;
+    width: 25%;
+    height: 80vh;
+    margin: 0 auto;
+}
+.log-title {
+    text-align: center;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: darkslateblue;
+}
+.workout-card {
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+}

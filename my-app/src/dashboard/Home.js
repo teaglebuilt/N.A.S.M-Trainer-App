@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import '../styles/navbar.css'
 import fire from '../config/fire'
 import NavBar from './NavBar';
-import WorkoutForm from '../createWorkout/WorkoutForm'
-import WorkoutCard from '../createWorkout/WorkoutCard'
+import WorkoutForm from '../dashboard/WorkoutForm'
+import Dashboard from '../dashboard/Dashboard';
 
 
 
@@ -13,7 +13,8 @@ class Home extends Component {
 
         this.state = {
             show: false,
-            selected: []
+            selected: [],
+            workoutArray: []
         }
     }
 
@@ -26,17 +27,38 @@ class Home extends Component {
     this.setState({selected: data})
     }.bind(this)
 
-    onCreate= function() {
+    onCreate= function(event) {
+        event.preventDefault()
         let workoutArray = this.state.selected
+        this.setState({workoutArray: workoutArray})
+        this.setState({show: false})
+        const DBRef = fire.database().ref('workout');
+        const workout = {
+            workoutList: this.state.workoutArray,
+            workoutDate: Date.now()
+        }
+        setTimeout(function(){DBRef.push(workout)}, 5000)
         console.log(workoutArray)
-        }.bind(this)
+
+    }.bind(this)
+
+
 
     render() {
         return(
-        <div>
+
+            <div>
             <NavBar showForm={this.showForm} />
-            <WorkoutForm setSelectedState={this.setSelectedState} selected={this.state.selected} onCreate={this.onCreate} showForm={this.showForm}  show={this.state.show} />
-         </div>
+            {this.state.show ?
+            <WorkoutForm
+            setSelectedState={this.setSelectedState}
+            selected={this.state.selected}
+            onCreate={this.onCreate}
+            showForm={this.showForm}
+            show={this.state.show} />
+             : <Dashboard workoutArray={this.state.workoutArray} />  }
+
+            </div>
 
         )
     }
