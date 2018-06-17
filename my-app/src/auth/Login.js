@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
+import Grid from '@material-ui/core/Grid';
 
 
 
@@ -91,30 +92,39 @@ render() {
 
 
         return (
-            <div className="login-page">
+    <div className="login-page">
+         <div className="loginContainerOne">
 
-            <div className="loginContainer">
             <form onSubmit={this.handleSubmit} className="loginForm">
 
-               <Typography variant='display1' align='center' gutterBottom>
+               <Typography variant='display1' align='center' className="signUpTitle" gutterBottom>
                 Login
                </Typography>
 
-                <div className="form-group">
-
-        <TextField margin="normal" value={this.state.email} onChange={this.handleChange}
+            <div className="form-group">
+                <TextField margin="normal" value={this.state.email}
+                onChange={this.handleChange}
                 floatingLabelText="E-mail" name="email"
                 className="form-control" placeholder="Enter Email"
                 hintText="Email" floatingLabelTextFixed />
-                </div>
+            </div>
 
 
-                <div className="form-group">
-                <TextField margin="normal" value={this.state.password} onChange={this.handleChange} type="password" name="password" className="form-control" placeholder="Enter Password" />
-                </div>
+            <div className="form-group">
+                <TextField margin="normal" value={this.state.password}
+                onChange={this.handleChange} type="password"
+                name="password" className="form-control"
+                placeholder="Enter Password" />
+            </div>
 
-                <Button variant="contained" color="primary" className="btn btn-lg btn-primary btn-block" type="submit" onClick={this.login}>Sign in</Button>
-                <Typography variant='display1' align='center' gutterBottom>
+                <Button variant="contained"
+                color="primary" className="btn btn-lg btn-primary btn-block"
+                type="submit" onClick={this.login}>Sign in</Button>
+            </form>
+        </div>
+        <div className="loginContainerTwo">
+            <form onSubmit={this.handleSubmit} className="loginForm">
+                <Typography variant='display1' align='center' className="signUpTitle" gutterBottom>
                 Create Account
                </Typography>
 
@@ -134,9 +144,9 @@ render() {
 
                     <Button variant="contained" color="primary" className="authBtn" type="submit" containedPrimary>Sign up</Button>
                 <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
-            </form>
-            </div>
-          </div>
+           </form>
+           </div>
+    </div>
         )
     }
 }

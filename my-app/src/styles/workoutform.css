@@ -1,6 +1,5 @@
 .create-form {
-    width: 25%;
-    border: 1px inset;
+    width: 30%;
     margin: 0 auto;
     height: 400px;
     position: absolute;
@@ -9,9 +8,13 @@
     left: 35%;
     border-radius: 10%;
     padding: 50px;
-    background:aliceblue;
-}
+    z-index: -1;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,1.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
+    font-size: 20px;
 
+}
 .dual {
     padding: 20px;
 }
@@ -32,10 +35,6 @@
 .createWorkout {
     margin-right: 10px;
     float: right;
-}
-
-.goal-dropdown {
-    font-size: 20px;
 }
 
 

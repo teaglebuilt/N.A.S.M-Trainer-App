@@ -8,12 +8,32 @@ import Typography from '@material-ui/core/Typography'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import IconButton from '@material-ui/core/IconButton'
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import 'typeface-roboto'
 import Dashboard from '../dashboard/Dashboard';
 import NavBar from '../dashboard/NavBar';
 import Home from '../dashboard/Home'
+import { withStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import PropTypes from 'prop-types';
+import Paper from '@material-ui/core/Paper';
+import Fade from '@material-ui/core/Fade';
 
 
+const styles = theme => ({
+    button: {
+      display: 'block',
+      marginTop: theme.spacing.unit * 2,
+    },
+    paper: {
+        margin: theme.spacing.unit,
+      },
+    formControl: {
+      margin: theme.spacing.unit,
+      minWidth: 120,
+    }
+  });
 
 class WorkoutForm extends Component {
 constructor(props){
@@ -26,6 +46,8 @@ constructor(props){
         singleExercise: [],
         selectedExercise: [],
         selected: [],
+        open: false,
+        age: ''
     }
     this.handleChange= this.handleChange.bind(this)
 
@@ -84,6 +106,18 @@ handleChange(e) {
 
 }
 
+goalChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
 temp = []
 onChange= function(selected) {
     let singleEx = selected.pop()
@@ -100,24 +134,37 @@ onChange= function(selected) {
 
     render() {
 
+        const { classes } = this.props;
 
         return(
             <div>
-                <form className="create-form" id="boxshadow">
+                <Fade in={this.props.show}>
+                <form className="create-form">
                 <IconButton onClick={this.props.onCreate} size="small" variant="contained" color="primary">
                   <ArrowBack size="large" />
                 </IconButton>
             <div className="workout-form-title">
                 <Typography variant='display2' align='center' gutterBottom>Customize your Workout</Typography>
             </div>
-            <div className="goalSelect">
-            <label className="label">Select your Goal</label>
-            <select onChange={this.handleChange} className="goal-dropdown">
-             {this.state.goals.map((index) => (
-                 <option value={index.id}>{index.goalName}</option>
-                  ))}
-            </select>
-            </div>
+                <FormControl className={classes.formControl}>
+                <InputLabel htmlFor="demo-controlled-open-select" size="large" >Goal</InputLabel>
+                    <Select
+                        open={this.state.open}
+                        onClose={this.handleClose}
+                        onOpen={this.handleOpen}
+                        value={this.state.goals}
+                        goalChange={this.goalChange}
+                        onChange={this.handleChange}
+                        inputProps={{
+                         name: 'goal',
+                        id: 'demo-controlled-open-select',
+                                     }}>
+                          {this.state.goals.map((index) => (
+                              <MenuItem value={index.id}>{index.goalName}</MenuItem>
+                            ))}
+                            </Select>
+
+                    </FormControl>
                 <div className="dual">
 
                     <DualListBox selected={this.props.selected}
@@ -136,10 +183,25 @@ onChange= function(selected) {
                      color="primary" raised>Create Workout</Button>
                </div>
             </form>
-
+             </Fade>
             </div>
         )
     }
 }
 
-export default WorkoutForm
+WorkoutForm.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+
+export default withStyles(styles)(WorkoutForm)
+
+       /* <InputLabel htmlFor="demo-controlled-open-select">Goal</InputLabel>
+            <div className="goalSelect">
+            <label className="label">Select your Goal</label>
+            <select onChange={this.handleChange} className="goal-dropdown">
+             {this.state.goals.map((index) => (
+                 <option value={index.id}>{index.goalName}</option>
+                  ))}
+            </select>
+            </div> */

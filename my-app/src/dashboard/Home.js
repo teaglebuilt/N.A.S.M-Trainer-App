@@ -4,6 +4,8 @@ import fire from '../config/fire'
 import NavBar from './NavBar';
 import WorkoutForm from '../dashboard/WorkoutForm'
 import Dashboard from '../dashboard/Dashboard';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import theme from '../styles/theme';
 
 
 
@@ -32,9 +34,10 @@ class Home extends Component {
         let workoutArray = this.state.selected
         this.setState({workoutArray: workoutArray})
         this.setState({show: false})
+        console.log(workoutArray)
         const DBRef = fire.database().ref('workout');
         const workout = {
-            workoutList: this.state.workoutArray,
+            workoutList: {},
             workoutDate: Date.now()
         }
         setTimeout(function(){DBRef.push(workout)}, 5000)
@@ -45,9 +48,12 @@ class Home extends Component {
 
 
     render() {
-        return(
 
+
+        return(
+            <MuiThemeProvider theme={theme}>
             <div>
+
             <NavBar showForm={this.showForm} />
             {this.state.show ?
             <WorkoutForm
@@ -57,8 +63,8 @@ class Home extends Component {
             showForm={this.showForm}
             show={this.state.show} />
              : <Dashboard workoutArray={this.state.workoutArray} />  }
-
-            </div>
+           </div>
+        </MuiThemeProvider>
 
         )
     }
