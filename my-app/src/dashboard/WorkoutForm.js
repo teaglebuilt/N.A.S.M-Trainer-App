@@ -48,8 +48,7 @@ class WorkoutForm extends Component {
             chosenExercises: [],
             chosenStrings: [],
             selected: [],
-            open: false,
-            age: ''
+            open: false
         }
         this.handleChange = this.handleChange.bind(this)
 
@@ -132,21 +131,23 @@ class WorkoutForm extends Component {
     // For example = ["chest-press", "incline dumbell-press"]
     // pass the array of strings through the dual list component
 
+    temporaryArray = []
     onChange = (selected) => {
-
             selected.forEach( string => {
                 const foundExercise = this.state.allExercises.find(x => x.exerciseName === string )
                 const currentChosen = this.state.chosenExercises.splice().concat([foundExercise])
+                this.temporaryArray.push(foundExercise)
          })
-        this.props.setSelectedState(selected)
-        this.setState({
-            chosenExercises: this.state.chosenExercises.splice().concat([this.currentChosen]),
-            chosenStrings: this.arrayOfStrings
-        })
+         this.props.setSelectedState(selected)
+         this.setState({
+             chosenExercises: this.temporaryArray,
+             chosenStrings: this.arrayOfStrings
+            })
+            console.log(this.state.chosenExercises)
+        }
 
-}
+        render() {
 
-    render() {
 
         const { classes } = this.props;
 

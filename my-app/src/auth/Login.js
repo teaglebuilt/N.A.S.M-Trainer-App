@@ -23,7 +23,8 @@ constructor(props) {
         lastName: "",
         email: "",
         password: "",
-        user: []
+        user: [],
+        currentUser: ""
     }
 }
 
@@ -37,9 +38,14 @@ login(event) {
     })
 }
 
-signUp(event) {
+signUp(key) {
     // event.preventDefault()
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then( user => {
+
+       fire.database().ref(`user/${key}`).update({userId: user.uid})
+        console.log(user)
+    })
     .catch( (error) => {
         console.log(error)
     })
@@ -57,16 +63,20 @@ handleSubmit(e) {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      userId: ""
     }
-    userRef.push(user);
+   let userData = userRef.push(user);
+
+    console.log(userData.key)
+
     this.setState({
       firstName: '',
       lastName: '',
       email: '',
       password: ''
     });
-    this.signUp()
+    this.signUp(userData.key)
 }
 
 componentDidMount(){

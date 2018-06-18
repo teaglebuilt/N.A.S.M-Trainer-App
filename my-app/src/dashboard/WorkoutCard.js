@@ -27,6 +27,7 @@ const styles = {
 };
 
 function workoutCard(props) {
+
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
     console.log(this.props.workoutArray)
