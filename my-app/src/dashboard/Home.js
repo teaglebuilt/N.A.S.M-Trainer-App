@@ -105,7 +105,8 @@ componentDidMount() {
                                     show={this.state.show} />
                                 :
                                 <Grid item={6}>
-                                    <Dashboard workoutArray={this.state.workoutArray} />
+                                    <Dashboard workoutArray={this.state.workoutArray}
+                                     />
                                 </Grid>}
                         </Grid>
 
