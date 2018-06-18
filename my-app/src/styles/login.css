@@ -1,8 +1,10 @@
-.login-page {
+.login-container {
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
 }
+
+
 .loginContainerOne {
     width: 450px;
     margin: auto;
@@ -21,7 +23,7 @@
     margin: auto;
     height: 600px;
     margin-top: 200px;
-    margin-left: 150px;
+    margin-right: 300px;
     /* z-index: -1;
     -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,1.5);
     -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
@@ -45,4 +47,10 @@ padding: 20px;
 .logInpTitle {
     padding-top: 20px;
     padding-left: 20px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }

@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
 import Grid from '@material-ui/core/Grid';
+import Home from '../dashboard/Home'
 
 
 
@@ -66,7 +67,7 @@ handleSubmit(e) {
       password: ''
     });
     this.signUp()
-  }
+}
 
 componentDidMount(){
     const userRef = fire.database().ref('user');
@@ -83,8 +84,13 @@ componentDidMount(){
             })
         }
         this.setState({user: newState})
+        console.log(this.state.user.key)
       })
     }
+
+
+
+
 
 
 render() {
@@ -92,7 +98,10 @@ render() {
 
 
         return (
-    <div className="login-page">
+    <div className="login-container">
+        <span className="logo">
+
+        </span>
          <div className="loginContainerOne">
 
             <form onSubmit={this.handleSubmit} className="loginForm">
@@ -143,9 +152,11 @@ render() {
 
 
                     <Button variant="contained" color="primary" className="authBtn" type="submit" containedPrimary>Sign up</Button>
-                <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
            </form>
            </div>
+           <div className="footer">
+               <strong><em><p className="mt-5 mb-3 text-muted">© Dillan Teagle - Front end Capstone Project - "Nashville Software School, 2018</p></em></strong>
+            </div>
     </div>
         )
     }

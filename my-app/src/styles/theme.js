@@ -2,7 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import yellow from '@material-ui/core/colors/yellow';
 import blue from '@material-ui/core/colors/blue';
 import 'typeface-roboto'
-import WebFont from 'webfontloader';
+
 
 export default createMuiTheme({
   palette: {

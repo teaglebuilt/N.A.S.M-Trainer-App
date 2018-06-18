@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from '../dashboard/Home'
+// import UserStats from '../dashboard/UserStats'
 import '../styles/dashboard.css'
 
 class Dashboard extends Component {
@@ -7,11 +8,12 @@ class Dashboard extends Component {
         super(props)
     }
 
+
     render() {
-            console.log(this.props.workoutArray)
+
         return(
 
-            <div>
+            <div className="width">
                 <h1 className="log-title">Workout Log</h1>
                 <div className="log-container">
                     <ul>
