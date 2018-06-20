@@ -68,7 +68,7 @@ class Home extends Component {
         let workoutArray = this.state.selected
         this.setState({ workoutArray: workoutArray })
         this.setState({ show: false })
-        console.log(workoutArray)
+
 
         const workoutDBRef = fire.database().ref('workout');
         const workoutExerciseDBRef = fire.database().ref('workoutHasExercise');
@@ -77,7 +77,7 @@ class Home extends Component {
         }
         let workoutObject = workoutDBRef.push(workout)
         let workoutId = workoutObject.key
-        console.log(workoutId)
+
         this.state.chosenExercises.forEach( ex => {
             const exercise = {
                 workoutID: workoutId,

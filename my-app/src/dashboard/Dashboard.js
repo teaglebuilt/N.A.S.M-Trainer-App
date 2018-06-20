@@ -90,9 +90,9 @@ combineExercises = function() {
 loopGroupEx = function() {
     let workoutObject = this.state.groupedExercises
     let groupedEx = Object.values(workoutObject)
-    console.log(groupedEx)
+
     return groupedEx.map( array => {
-        console.log(array)
+
         return(<WorkoutCard key={this.uniqueKey++} array={array} />)
     })
 }.bind(this)

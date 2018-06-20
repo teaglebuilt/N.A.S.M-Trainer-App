@@ -35,7 +35,7 @@ class WorkoutCard extends Component {
 displayCardContent = function() {
  let workoutArr = this.props.array
  workoutArr.forEach( object => {
-   console.log(object)
+
  })
 }
   render() {

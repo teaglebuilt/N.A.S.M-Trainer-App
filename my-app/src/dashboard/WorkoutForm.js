@@ -62,14 +62,11 @@ class WorkoutForm extends Component {
         goals.on('value', snap => {
             console.log(snap.val())
             this.setState({ goals: snap.val() })
-            console.log('goals', this.state.goals)
         })
         // get back intersecting table of exercises with a goal foreign key
         const exercises = fire.database().ref().child("goalExercises")
         exercises.on('value', snap => {
             this.setState({ exercises: snap.val() })
-
-            console.log('exercises', snap.val())
 
         })
         // get back all exercises
@@ -85,23 +82,18 @@ class WorkoutForm extends Component {
     goalExercises = function (event) {
 
         let singleEx = this.state.allExercises
-        console.log('exercises', singleEx)
         let goalId = this.state.goalSelector
         let exercises = this.state.exercises
-        console.log('goalEx', exercises)
         let tempArray = []
 
         for (let i = 0; i < singleEx.length; i++) {
             const currentEx = singleEx[i]
-            console.log(currentEx)
             exercises.map(ex => {
                 if (ex.goalId === goalId && ex.exerciseId === currentEx.id) {
-                    console.log(currentEx.exerciseName, currentEx.id)
                     tempArray.push(currentEx.exerciseName)
                 }
             })
             this.setState({ possibleExercises: tempArray })
-            console.log(tempArray)
         }
     }.bind(this)
 
@@ -143,11 +135,8 @@ class WorkoutForm extends Component {
             chosenExercises: currentChosen,
             chosenStrings: selected
         })
-    }
-
+}
     render() {
-        console.log(this.state.chosenStrings)
-        console.log(this.state.chosenExercises)
 
         const { classes } = this.props;
 

@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
 import Grid from '@material-ui/core/Grid';
 import Home from '../dashboard/Home'
+// import Register from '../auth/Register'
 
 
 
@@ -31,49 +32,57 @@ login(event) {
     event.preventDefault()
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
     .then( (user) => {
-        console.log(user)
     }).catch(error => {
         console.log(error)
     })
 }
 
-signUp(event) {
-    // event.preventDefault()
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    .catch( (error) => {
-        console.log(error)
-    })
-}
+signUp(key) {
+        // event.preventDefault()
+        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+        .then( user => {
+
+           let updateUser =fire.database().ref('user')
+           updateUser.update({userId: user.user.uid})
+            console.log(user)
+        })
+        .catch( (error) => {
+            console.log(error)
+        })
+    }
+
+
 handleChange(event) {
     this.setState({ [event.target.name]: event.target.value })
 }
 
 
 handleSubmit(e) {
-    console.log("handlesubmit")
     e.preventDefault();
     const userRef = fire.database().ref('user');
     const user = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      userId: ""
     }
-    userRef.push(user);
+    let userData = userRef.push(user);
+
+
     this.setState({
       firstName: '',
       lastName: '',
       email: '',
       password: ''
     });
-    this.signUp()
+    this.signUp(userData.key)
 }
 
 componentDidMount(){
     const userRef = fire.database().ref('user');
     userRef.on('value', (snapshot) => {
         let user = snapshot.val()
-        console.log(user)
         let newState = []
         for(let i in user) {
             newState.push({
@@ -84,7 +93,6 @@ componentDidMount(){
             })
         }
         this.setState({user: newState})
-        console.log(this.state.user.key)
       })
     }
 
@@ -96,8 +104,7 @@ componentDidMount(){
 render() {
 
 
-
-        return (
+return (
     <div className="login-container">
         <span className="logo">
 
@@ -131,6 +138,7 @@ render() {
                 type="submit" onClick={this.login}>Sign in</Button>
             </form>
         </div>
+
         <div className="loginContainerTwo">
             <form onSubmit={this.handleSubmit} className="loginForm">
                 <Typography variant='display1' align='center' className="signUpTitle" gutterBottom>
@@ -154,9 +162,10 @@ render() {
                     <Button variant="contained" color="primary" className="authBtn" type="submit" containedPrimary>Sign up</Button>
            </form>
            </div>
-           <div className="footer">
+
+           {/* <div className="footer">
                <strong><em><p className="mt-5 mb-3 text-muted">© Dillan Teagle - Front end Capstone Project - "Nashville Software School, 2018</p></em></strong>
-            </div>
+            </div> */}
     </div>
         )
     }
