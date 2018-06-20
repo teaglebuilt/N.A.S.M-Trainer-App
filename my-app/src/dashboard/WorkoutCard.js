@@ -7,10 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Home from '../dashboard/Home'
+import Dashboard from '../dashboard/Dashboard'
+import '../styles/workoutCard.css'
 
 const styles = {
+
   card: {
-    minWidth: 275,
+    minWidth: 2,
+    border: 5
   },
   bullet: {
     display: 'inline-block',
@@ -26,38 +30,57 @@ const styles = {
   },
 };
 
-function workoutCard(props) {
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
-    console.log(this.props.workoutArray)
-  return (
-    <div>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} color="textSecondary">
-           Workout
-          </Typography>
-          <Typography variant="headline" component="h2">
+class WorkoutCard extends Component {
 
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-
-          </Typography>
-          <Typography component="p">
-            well meaning and kindly.<br />
-            {'"a benevolent smile"'}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
-      </Card>
-    </div>
-  );
+displayCardContent = function() {
+ let workoutArr = this.props.array
+ workoutArr.forEach( object => {
+   console.log(object)
+ })
 }
+  render() {
 
-SimpleCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(workoutCard);
+    return (
+      <div>
+        <Card className={this.props.classes.card}>
+          <CardContent>
+            <Typography className={this.props.classes.title} color="textSecondary">
+
+            </Typography>
+            <Typography variant="headline" component="h2">
+             Date
+            </Typography>
+            <Typography className={this.props.classes.pos} variant="headline" color="textSecondary">
+            {/* {this.displayCardContent()} */}
+
+                      {this.props.array.map( object => {
+
+                                  return( <ul className="ex-list">
+                                            <li>{object.name}</li>
+                                            <li>{object.description}</li>
+                                           </ul>
+                                            )
+
+                          })}
+
+            </Typography>
+            <Typography component="p">
+
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" outlinedButton>Show Details</Button>
+          </CardActions>
+        </Card>
+      </div>
+    );
+  }
+}
+    WorkoutCard.propTypes = {
+      classes: PropTypes.object.isRequired,
+    };
+
+
+export default withStyles(styles)(WorkoutCard);
+

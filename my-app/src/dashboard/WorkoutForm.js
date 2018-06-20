@@ -19,6 +19,7 @@ import Select from '@material-ui/core/Select';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Fade from '@material-ui/core/Fade';
+import { Slide } from '@material-ui/core';
 
 
 const styles = theme => ({
@@ -131,22 +132,22 @@ class WorkoutForm extends Component {
     // create an array of exerciseName key from each exercise object which will be an array of strings
     // For example = ["chest-press", "incline dumbell-press"]
     // pass the array of strings through the dual list component
-
     onChange = (selected) => {
-
-            selected.forEach( string => {
-                const foundExercise = this.state.allExercises.find(x => x.exerciseName === string )
-                const currentChosen = this.state.chosenExercises.splice().concat([foundExercise])
-         })
-        this.props.setSelectedState(selected)
-        this.setState({
-            chosenExercises: this.state.chosenExercises.splice().concat([this.currentChosen]),
-            chosenStrings: this.arrayOfStrings
+        const currentChosen = selected.map(string => {
+            return this.state.allExercises.find(x => x.exerciseName === string)
         })
+        this.props.setSelectedState(selected)
+        this.props.setChosenExercises(currentChosen)
 
-}
+        this.setState({
+            chosenExercises: currentChosen,
+            chosenStrings: selected
+        })
+    }
 
     render() {
+        console.log(this.state.chosenStrings)
+        console.log(this.state.chosenExercises)
 
         const { classes } = this.props;
 

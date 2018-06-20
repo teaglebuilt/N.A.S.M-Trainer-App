@@ -41,6 +41,7 @@ class Home extends Component {
             show: false,
             selected: [],
             workoutArray: [],
+            chosenExercises: []
         }
     }
 
@@ -53,8 +54,16 @@ class Home extends Component {
         this.setState({ selected: data })
     }.bind(this)
 
+    setChosenExercises = function ( data ) {
+        this.setState({ chosenExercises: data })
+    }.bind(this)
+
+    // setChosenExercises = function (data) {
+    //     this.setState({ chosenExercises: data })
+    // }.bind(this)
 
     onCreate = function (event) {
+
         event.preventDefault()
         let workoutArray = this.state.selected
         this.setState({ workoutArray: workoutArray })
@@ -69,13 +78,14 @@ class Home extends Component {
         let workoutObject = workoutDBRef.push(workout)
         let workoutId = workoutObject.key
         console.log(workoutId)
-        this.state.selected.forEach( ex => {
+        this.state.chosenExercises.forEach( ex => {
             const exercise = {
                 workoutID: workoutId,
-                exercise: ex
+                exercise: ex.id
             }
             workoutExerciseDBRef.push(exercise)
         })
+
     }.bind(this)
 
 
@@ -84,7 +94,7 @@ componentDidMount() {
 }
 
     render() {
-
+        console.log(this.state.chosenExercises)
 
         return (
             <div>
@@ -98,6 +108,7 @@ componentDidMount() {
                             </Grid>
                             {this.state.show ?
                                 <WorkoutForm
+                                    setChosenExercises={this.setChosenExercises}
                                     setSelectedState={this.setSelectedState}
                                     selected={this.state.selected}
                                     onCreate={this.onCreate}
@@ -105,7 +116,8 @@ componentDidMount() {
                                     show={this.state.show} />
                                 :
                                 <Grid item={6}>
-                                    <Dashboard workoutArray={this.state.workoutArray} />
+                                    <Dashboard
+                                    chosenExercises={this.state.chosenExercises} />
                                 </Grid>}
                         </Grid>
 
