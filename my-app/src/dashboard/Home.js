@@ -11,9 +11,6 @@ import PropTypes from 'prop-types'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from '../styles/theme';
 import './Home'
-import Login from '../auth/Login'
-// const $ = require('jquery');
-
 
 const styles = theme => ({
     container: {
@@ -41,7 +38,8 @@ class Home extends Component {
             show: false,
             selected: [],
             workoutArray: [],
-            chosenExercises: []
+            chosenExercises: [],
+            currentUser: []
         }
     }
 
@@ -52,31 +50,28 @@ class Home extends Component {
 
     setSelectedState = function (data) {
         this.setState({ selected: data })
+        this.setState({currentUser: data })
     }.bind(this)
 
     setChosenExercises = function ( data ) {
         this.setState({ chosenExercises: data })
     }.bind(this)
 
-    // setChosenExercises = function (data) {
-    //     this.setState({ chosenExercises: data })
-    // }.bind(this)
-
-    onCreate = function (event) {
-
+    onCreate = function (event, key ) {
         event.preventDefault()
         let workoutArray = this.state.selected
         this.setState({ workoutArray: workoutArray })
         this.setState({ show: false })
-
-
         const workoutDBRef = fire.database().ref('workout');
         const workoutExerciseDBRef = fire.database().ref('workoutHasExercise');
-        const workout = {
-            workoutDate: Date.now()
-        }
-        let workoutObject = workoutDBRef.push(workout)
-        let workoutId = workoutObject.key
+        fire.auth().onAuthStateChanged((user) => {
+            console.log(user.uid)
+            const workout = {
+                workoutDate: Date.now(),
+                userId: user.uid
+            }
+            let workoutObject = workoutDBRef.push(workout)
+            let workoutId = workoutObject.key
 
         this.state.chosenExercises.forEach( ex => {
             const exercise = {
@@ -85,18 +80,20 @@ class Home extends Component {
             }
             workoutExerciseDBRef.push(exercise)
         })
+    })
+}.bind(this)
 
-    }.bind(this)
 
 
 componentDidMount() {
 
 }
 
-    render() {
-        console.log(this.state.chosenExercises)
+render() {
+console.log(this.props.currentUser)
 
         return (
+
             <div>
                 <MuiThemeProvider theme={theme}>
 
@@ -104,7 +101,8 @@ componentDidMount() {
                         <NavBar showForm={this.showForm} />
                         <Grid container spacing={24}>
                             <Grid item={4}>
-                                <UserStats />
+                                <UserStats currentUser={this.props.currentUser}
+                                onEdit={this.onEdit} />
                             </Grid>
                             {this.state.show ?
                                 <WorkoutForm

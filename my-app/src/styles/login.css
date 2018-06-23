@@ -3,7 +3,12 @@
     flex-direction: row wrap;
     justify-content: space-around;
 }
-
+.button:hover {
+    color: red;
+}
+.google {
+    color: red;
+}
 
 .loginContainerOne {
     width: 450px;

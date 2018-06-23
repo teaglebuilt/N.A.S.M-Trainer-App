@@ -1,12 +1,13 @@
 import React, { Component } from "react"
-import fire from '../config/fire'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
 import Grid from '@material-ui/core/Grid';
 import Home from '../dashboard/Home'
-// import Register from '../auth/Register'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import fire, { auth, provider } from '../config/fire';
+
 
 
 
@@ -18,6 +19,7 @@ constructor(props) {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.signUp = this.signUp.bind(this)
+        this.googleSignIn = this.googleSignIn.bind(this)
 
     this.state = {
         firstName: "",
@@ -37,13 +39,23 @@ login(event) {
     })
 }
 
+googleSignIn() {
+    auth.signInWithPopup(provider)
+    .then((result) => {
+      const user = result.user;
+      this.setState({
+        user
+      });
+    });
+}
+
 signUp(key) {
         // event.preventDefault()
         fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then( user => {
 
-           let updateUser =fire.database().ref('user')
-           updateUser.update({userId: user.user.uid})
+           let updateUser =fire.database().ref(`user/${key}`)
+            updateUser.update({userId: user.user.uid})
             console.log(user)
         })
         .catch( (error) => {
@@ -65,8 +77,16 @@ handleSubmit(e) {
       lastName: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      userId: ""
+      userId: "",
+      weight: "",
+      BMI: "",
+      Max: {
+          Bench: "",
+          Squat: "",
+          DeadLift: ""
+      }
     }
+
     let userData = userRef.push(user);
 
 
@@ -134,8 +154,13 @@ return (
             </div>
 
                 <Button variant="contained"
-                color="primary" className="btn btn-lg btn-primary btn-block"
+                color="primary"
                 type="submit" onClick={this.login}>Sign in</Button>
+                <Button variant="outlined" className="button" onClick={this.googleSignIn}>
+                <FontAwesomeIcon className="google" icon={['fab', 'google']} size="1x" />
+                oogle
+                </Button>
+
             </form>
         </div>
 
@@ -172,4 +197,3 @@ return (
 }
 
 export default Login
-

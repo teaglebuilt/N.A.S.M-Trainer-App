@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import DualListBox from 'react-dual-listbox';
 import 'react-dual-listbox/lib/react-dual-listbox.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import fire from '../config/fire'
 import '../styles/workoutform.css'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import IconButton from '@material-ui/core/IconButton'
 import ArrowBack from '@material-ui/icons/ArrowBack';
-import Dashboard from '../dashboard/Dashboard';
-import NavBar from '../dashboard/NavBar';
-import Home from '../dashboard/Home'
 import { withStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
 import Fade from '@material-ui/core/Fade';
-import { Slide } from '@material-ui/core';
+
 
 
 const styles = theme => ({
@@ -136,6 +134,7 @@ class WorkoutForm extends Component {
             chosenStrings: selected
         })
 }
+
     render() {
 
         const { classes } = this.props;
@@ -170,7 +169,6 @@ class WorkoutForm extends Component {
 
                         </FormControl>
                         <div className="dual">
-
                             <DualListBox
                                 selected={this.props.selected}
                                 onChange={this.onChange}

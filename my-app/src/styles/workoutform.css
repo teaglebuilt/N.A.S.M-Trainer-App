@@ -18,7 +18,10 @@
 .dual {
     padding: 20px;
 }
-
+.icons {
+    font-family: "Font Awesome 5 Free";
+    content: "/f105";
+}
 
 .goalSelect {
     padding: 20px;
