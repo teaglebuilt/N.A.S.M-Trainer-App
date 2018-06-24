@@ -143,7 +143,7 @@ class WorkoutForm extends Component {
             <div>
                 <Fade in={this.props.show}>
                     <form className="create-form">
-                        <IconButton onClick={this.props.onCreate} size="small" variant="contained" color="primary">
+                        <IconButton show={this.props.show} onClick={this.props.onCreate} size="small" variant="contained" color="primary">
                             <ArrowBack size="large" />
                         </IconButton>
                         <div className="workout-form-title">

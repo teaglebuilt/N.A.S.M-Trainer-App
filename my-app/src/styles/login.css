@@ -1,34 +1,50 @@
+.logo {
+    padding: 20px;
+    width: 350px;
+    height: 200px;
+}
 .login-container {
     display: flex;
     flex-direction: row wrap;
     justify-content: space-around;
+    /* margin-left: 250px; */
+    float: left;
 }
-.button:hover {
+.button {
     color: red;
 }
 .google {
-    color: red;
+    color: white
 }
 
 .loginContainerOne {
     width: 450px;
     margin: auto;
     height: 600px;
-    margin-top: 200px;
-    margin-right: 150px;
+    /* margin-top: 200px; */
+    margin-right: 50px;
+    margin-left: 50px;
     /* z-index: -1;
     -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,1.5);
     -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
     border-radius: 5%; */
 }
+.social-sign-in {
+    width: 300px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.social {
+}
 
 .loginContainerTwo {
     width: 450px;
     margin: auto;
     height: 600px;
-    margin-top: 200px;
-    margin-right: 300px;
+    /* margin-top: 200px; */
+    /* margin-right: 300px; */
     /* z-index: -1;
     -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,1.5);
     -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
@@ -53,9 +69,4 @@ padding: 20px;
     padding-top: 20px;
     padding-left: 20px;
 }
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
+

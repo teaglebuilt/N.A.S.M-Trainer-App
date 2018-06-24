@@ -19,7 +19,8 @@ const styles = theme => ({
     marginLeft: 40,
     marginTop: theme.spacing.unit * 3,
     width: 250,
-    height: 250
+    height: 250,
+    borderRadius: 15
   }),
   title: {
       fontFamily: ['sans-serif'],

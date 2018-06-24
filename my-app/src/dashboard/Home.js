@@ -50,7 +50,6 @@ class Home extends Component {
 
     setSelectedState = function (data) {
         this.setState({ selected: data })
-        this.setState({currentUser: data })
     }.bind(this)
 
     setChosenExercises = function ( data ) {
@@ -94,7 +93,7 @@ console.log(this.props.currentUser)
 
         return (
 
-            <div>
+
                 <MuiThemeProvider theme={theme}>
 
                     <div className="home-page">
@@ -111,10 +110,13 @@ console.log(this.props.currentUser)
                                     selected={this.state.selected}
                                     onCreate={this.onCreate}
                                     showForm={this.showForm}
-                                    show={this.state.show} />
+                                    hideForm={this.hideForm}
+                                    show={this.state.show}
+                                     />
                                 :
                                 <Grid item={6}>
                                     <Dashboard
+                                    currentUser={this.props.currentUser}
                                     chosenExercises={this.state.chosenExercises} />
                                 </Grid>}
                         </Grid>
@@ -122,7 +124,6 @@ console.log(this.props.currentUser)
 
                     </div>
                 </MuiThemeProvider>
-            </div>
         )
     }
 }

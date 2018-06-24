@@ -26,6 +26,11 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  fab: {
+    height: 50,
+    width: 50,
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+  }
 };
 
 class MenuAppBar extends React.Component {

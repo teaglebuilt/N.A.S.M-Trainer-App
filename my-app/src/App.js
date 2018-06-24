@@ -6,9 +6,9 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './styles/theme';
 import Login from './auth/Login'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {  faGoogle } from '@fortawesome/free-brands-svg-icons'
+import {  faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import {  faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-library.add( faChevronRight, faChevronLeft, faGoogle)
+library.add( faChevronRight, faChevronLeft, faGoogle, faFacebook)
 
 class App extends Component {
 
@@ -63,7 +63,6 @@ authListener() {
     })
   }.bind(this)
 render() {
-
 console.log(this.state.currentUser)
     return(
         <MuiThemeProvider theme={theme}>

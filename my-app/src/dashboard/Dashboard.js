@@ -13,7 +13,8 @@ class Dashboard extends Component {
     state = {
         workoutHistory: [],
         groupedExercises: {},
-        arrayOfExercises: []
+        arrayOfExercises: [],
+        displayCards: false
     }
 
 
@@ -64,15 +65,16 @@ combineExercises = function() {
         const groupedExercises = {}
       newArray.forEach(ex => {
            let exObj = ex.exerciseObject
-            // for( let key in exObj) {
-                if (!groupedExercises.hasOwnProperty(ex.workoutID)) {
+                if (!groupedExercises.hasOwnProperty(ex.workoutID, ex.userId)) {
                                 groupedExercises[ex.workoutID] = [{
+                                    date: new Date().toISOString().split('T')[0],
                                     name: ex.exerciseObject.exerciseName,
                                     image: ex.exerciseObject.exerciseImageURL,
                                     description: ex.exerciseObject.exerciseDescr
                                 }]
                             } else {
                                 groupedExercises[ex.workoutID].push({
+                                    date: new Date().toISOString().split('T')[0],
                                     name: ex.exerciseObject.exerciseName,
                                     image: ex.exerciseObject.exerciseImageURL,
                                     description: ex.exerciseObject.exerciseDescr
@@ -86,36 +88,45 @@ combineExercises = function() {
 
 }.bind(this)
 
-
 loopGroupEx = function() {
     let workoutObject = this.state.groupedExercises
     let groupedEx = Object.values(workoutObject)
 
-    return groupedEx.map( array => {
-
-        return(<WorkoutCard key={this.uniqueKey++} array={array} />)
+      return groupedEx.map( array => {
+      return(
+      <WorkoutCard key={this.uniqueKey++} array={array} />
+    )
     })
 }.bind(this)
 
+userHistory = function() {
+const workoutDB = fire.database().ref('workout')
+let currentUser = this.props.currentUser
+let workoutObject = this.state.groupedExercises
+let groupedEx = Object.values(workoutObject)
+workoutDB.on('value', snap => {
+    let workouts = snap.val()
+    let workoutArr = Object.values(workouts)
+      workoutArr.forEach( index => {
+          console.log(index.userId)
+          currentUser.find( user => {
+              console.log(user.userId)
+             if(index.userId === user.userId) {
+                // {this.loopGroupEx()}
+             }
+        })
+  })
+})
+}.bind(this)
+
 render() {
-
-        // console.log(this.props.chosenExercises)
-
-// loop ovr workouthistory
-//initialize an array
-// each workout, if wh.workoutID === nextwh workoutID
-// push it in the array
-//remove from the wh array
-
-// render wirkoutcard using this array
         return(
 
             <div className="width">
-                <h1 className="log-title">Workout Log</h1>
-                <div className="log-container">
+
+                {this.userHistory()}
                 {this.loopGroupEx()}
 
-                </div>
             </div>
         )
     }

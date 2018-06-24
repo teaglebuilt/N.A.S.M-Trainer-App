@@ -11,10 +11,12 @@ import Dashboard from '../dashboard/Dashboard'
 import '../styles/workoutCard.css'
 
 const styles = {
-
   card: {
-    minWidth: 2,
-    border: 5
+    maxWidth: 600,
+    minWidth: 400,
+    borderRadius: 15,
+    margin: 20,
+    padding: 0,
   },
   bullet: {
     display: 'inline-block',
@@ -30,44 +32,27 @@ const styles = {
   },
 };
 
+
 class WorkoutCard extends Component {
 
-displayCardContent = function() {
- let workoutArr = this.props.array
- workoutArr.forEach( object => {
 
- })
-}
   render() {
-
-
     return (
       <div>
         <Card className={this.props.classes.card}>
           <CardContent>
-            <Typography className={this.props.classes.title} color="textSecondary">
-
-            </Typography>
             <Typography variant="headline" component="h2">
-             Date
             </Typography>
-            <Typography className={this.props.classes.pos} variant="headline" color="textSecondary">
-            {/* {this.displayCardContent()} */}
+            {this.props.array.map(object => {
 
-                      {this.props.array.map( object => {
-
-                                  return( <ul className="ex-list">
-                                            <li>{object.name}</li>
-                                            <li>{object.description}</li>
-                                           </ul>
-                                            )
-
-                          })}
-
-            </Typography>
-            <Typography component="p">
-
-            </Typography>
+              return (
+                <div>
+                  <Typography className={this.props.classes.pos} variant="headline" color="textSecondary">
+                    {object.name}
+                  </Typography>
+                </div>
+              )
+            })}
           </CardContent>
           <CardActions>
             <Button size="small" outlinedButton>Show Details</Button>
@@ -77,9 +62,9 @@ displayCardContent = function() {
     );
   }
 }
-    WorkoutCard.propTypes = {
-      classes: PropTypes.object.isRequired,
-    };
+WorkoutCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 
 export default withStyles(styles)(WorkoutCard);

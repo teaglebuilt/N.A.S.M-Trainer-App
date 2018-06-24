@@ -7,9 +7,32 @@ import Grid from '@material-ui/core/Grid';
 import Home from '../dashboard/Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import fire, { auth, provider } from '../config/fire';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import red from '@material-ui/core/colors/red';
+import indigo from '@material-ui/core/colors/indigo';
 
-
-
+const styles = theme => ({
+    googleButton: {
+      margin: theme.spacing.unit,
+      color: theme.palette.getContrastText(red[500]),
+      backgroundColor: red[500],
+      '&:hover': {
+        backgroundColor: red[700],
+      }
+    },
+    facebookButton: {
+        margin: theme.spacing.unit,
+        color: theme.palette.getContrastText(indigo[500]),
+        backgroundColor: indigo[500],
+        '&:hover': {
+          backgroundColor: indigo[500],
+        }
+    },
+    input: {
+      display: 'none',
+    },
+  });
 
 class Login extends Component {
 constructor(props) {
@@ -123,12 +146,13 @@ componentDidMount(){
 
 render() {
 
-
 return (
-    <div className="login-container">
-        <span className="logo">
-
+    <div>
+        <span className="">
+            <img src="https://preview.ibb.co/fAZmpo/nasm_logo_one_copy.png" className="logo"/>
         </span>
+    <div className="login-container">
+
          <div className="loginContainerOne">
 
             <form onSubmit={this.handleSubmit} className="loginForm">
@@ -156,13 +180,22 @@ return (
                 <Button variant="contained"
                 color="primary"
                 type="submit" onClick={this.login}>Sign in</Button>
-                <Button variant="outlined" className="button" onClick={this.googleSignIn}>
-                <FontAwesomeIcon className="google" icon={['fab', 'google']} size="1x" />
-                oogle
-                </Button>
-
             </form>
         </div>
+
+            <div className="social-sign-in">
+            <Typography variant='display1' align='center' className="social" gutterBottom>
+                Or Sign In with
+               </Typography>
+                <Button variant="contained" className={this.props.classes.googleButton} onClick={this.googleSignIn}>
+                   <FontAwesomeIcon className="google" icon={['fab', 'google']} size="1x" />
+                    oogle
+                </Button>
+                <Button variant="contained" className={this.props.classes.facebookButton}>
+                   <FontAwesomeIcon className="google" icon={['fab', 'facebook']} size="2x" />
+                    acebook
+                </Button>
+            </div>
 
         <div className="loginContainerTwo">
             <form onSubmit={this.handleSubmit} className="loginForm">
@@ -188,12 +221,13 @@ return (
            </form>
            </div>
 
-           {/* <div className="footer">
-               <strong><em><p className="mt-5 mb-3 text-muted">© Dillan Teagle - Front end Capstone Project - "Nashville Software School, 2018</p></em></strong>
-            </div> */}
+    </div>
     </div>
         )
     }
 }
+Login.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
 
-export default Login
+export default withStyles(styles)(Login)
