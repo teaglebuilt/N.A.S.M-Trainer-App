@@ -6,7 +6,7 @@ import WorkoutForm from '../dashboard/WorkoutForm'
 import Dashboard from '../dashboard/Dashboard';
 import UserStats from '../dashboard/UserStats'
 import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import Chart from '../dashboard/chart'
 import PropTypes from 'prop-types'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from '../styles/theme';
@@ -114,11 +114,14 @@ console.log(this.props.currentUser)
                                     show={this.state.show}
                                      />
                                 :
-                                <Grid item={6}>
+
+                                <Grid item={4}>
                                     <Dashboard
                                     currentUser={this.props.currentUser}
                                     chosenExercises={this.state.chosenExercises} />
-                                </Grid>}
+                                </Grid>
+                                     }
+
                         </Grid>
 
 

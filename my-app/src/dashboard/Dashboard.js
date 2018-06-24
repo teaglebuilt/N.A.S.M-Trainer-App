@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from '../dashboard/Home'
 import WorkoutCard from '../dashboard/WorkoutCard'
 // import UserStats from '../dashboard/UserStats'
+import Chart from '../dashboard/chart'
 import '../styles/dashboard.css'
 import fire from '../config/fire'
 
@@ -108,7 +109,7 @@ workoutDB.on('value', snap => {
     let workouts = snap.val()
     let workoutArr = Object.values(workouts)
       workoutArr.forEach( index => {
-          console.log(index.userId)
+          console.log(index)
           currentUser.find( user => {
               console.log(user.userId)
              if(index.userId === user.userId) {
@@ -122,11 +123,14 @@ workoutDB.on('value', snap => {
 render() {
         return(
 
-            <div className="width">
-
+            <div className="dashboard">
+             <div className="workoutLog">
                 {this.userHistory()}
                 {this.loopGroupEx()}
-
+             </div>
+             <div className="chart">
+                <Chart />
+             </div>
             </div>
         )
     }
