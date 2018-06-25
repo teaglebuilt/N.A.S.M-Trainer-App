@@ -3,7 +3,6 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import "../styles/login.css"
-import Grid from '@material-ui/core/Grid';
 import Home from '../dashboard/Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import fire, { auth, provider } from '../config/fire';
@@ -11,6 +10,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 import indigo from '@material-ui/core/colors/indigo';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
     googleButton: {
@@ -147,8 +147,9 @@ componentDidMount(){
 render() {
 
 return (
+
     <div>
-        <span className="">
+        <span className="logo">
             <img src="https://preview.ibb.co/fAZmpo/nasm_logo_one_copy.png" className="logo"/>
         </span>
     <div className="login-container">
@@ -183,7 +184,7 @@ return (
             </form>
         </div>
 
-            <div className="social-sign-in">
+            <div className="social-sign-in col-4">
             <Typography variant='display1' align='center' className="social" gutterBottom>
                 Or Sign In with
                </Typography>
@@ -221,8 +222,9 @@ return (
            </form>
            </div>
 
-    </div>
-    </div>
+      </div>
+     </div>
+
         )
     }
 }

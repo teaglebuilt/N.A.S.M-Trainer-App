@@ -34,7 +34,18 @@ const styles = {
 class WorkoutCard extends Component {
 
 
+getDate = function () {
+  let array = this.props.array
+  let temp = []
+  array.forEach( index => {
+    if(index.hasOwnProperty("date")) {
+       temp.push(index.date)
+    }
+  })
+  return( temp[0])
+}.bind(this)
   render() {
+
     return (
       <div>
         <Card className={this.props.classes.card}>
@@ -51,6 +62,9 @@ class WorkoutCard extends Component {
                 </div>
               )
             })}
+            <Typography className={this.props.classes.pos} variant="headline" color="textSecondary">
+           {this.getDate()}
+            </Typography>
           </CardContent>
           <CardActions>
             <Button size="small" outlinedButton>Show Details</Button>
