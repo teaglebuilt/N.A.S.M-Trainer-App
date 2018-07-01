@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import '../styles/workoutCard.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const styles = {
   card: {
@@ -44,13 +45,15 @@ getDate = function () {
   })
   return( temp[0])
 }.bind(this)
-  render() {
 
+  render() {
+    console.log(this.props.object)
     return (
       <div>
         <Card className={this.props.classes.card}>
           <CardContent>
             <Typography variant="headline" component="h2">
+            <FontAwesomeIcon icon={['fas', 'dumbbell']} />
             </Typography>
             {this.props.array.map(object => {
 

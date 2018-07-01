@@ -3,6 +3,7 @@ import { Bar, Line, Pie } from 'react-chartjs-2'
 import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import fire from '../config/fire'
 
 const styles = theme => ({
     root: theme.mixins.gutters({
@@ -34,11 +35,12 @@ class Chart extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            goals: [],
             chartData: {
                 labels: ['Stabilization', "Endurance", "Hypertrophy", "Power"],
                 datasets: [
                     {
-                      label: 'Population',
+                      label: 'Goal',
                       data: [ 1, 3, 4, 5 ],
                       backgroundColor: [
                         'rgba(255, 99, 132, 0.6)',
@@ -55,10 +57,25 @@ class Chart extends Component {
         }
     }
 
+goalData = function() {
+    let goals = fire.database().ref('goal')
+    goals.on('value', snap => {
+        console.log(snap.val())
+        this.setState({ goals: snap.val() })
+    })
+}.bind(this)
+
+componentDidMount() {
+    this.goalData()
+}
+
     render() {
+
+        console.log(this.state.goals)
         const { classes } = this.props;
          return (<div className="chart">
              <Paper className={classes.root} elevation={4}>
+
                   <Bar
                        data={this.state.chartData}
                        options={{
@@ -88,6 +105,7 @@ class Chart extends Component {
                             enabled: true
                         }
                        }} />
+
                     </Paper>
                  </div>
                  )

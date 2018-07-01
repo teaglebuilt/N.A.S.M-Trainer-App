@@ -7,8 +7,8 @@ import theme from './styles/theme';
 import Login from './auth/Login'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {  faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons'
-import {  faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-library.add( faChevronRight, faChevronLeft, faGoogle, faFacebook)
+import {  faChevronRight, faChevronLeft, faDumbbell } from '@fortawesome/free-solid-svg-icons'
+library.add( faDumbbell, faChevronRight, faChevronLeft, faGoogle, faFacebook)
 
 class App extends Component {
 

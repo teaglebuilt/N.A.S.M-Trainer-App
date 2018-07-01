@@ -14,13 +14,17 @@ import AddIcon from '@material-ui/icons/Add';
 import fire from '../config/fire'
 import Home from '../dashboard/Home'
 import WorkoutForm from '../dashboard/WorkoutForm'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const styles = {
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   flex: {
     flex: 1,
+    fontSize: 30,
+    fontWeight: 500,
+    padding: 10
   },
   menuButton: {
     marginLeft: -12,
@@ -30,6 +34,10 @@ const styles = {
     height: 50,
     width: 50,
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)'
+  },
+  logo: {
+    fontFamily: "roboto",
+    padding: 10
   }
 };
 
@@ -81,8 +89,18 @@ class MenuAppBar extends React.Component {
             </Tooltip>
 
             <Typography variant="title" color="inherit" className={classes.flex}>
-
+              Create Workout
             </Typography>
+
+             <Typography variant="title" color="inherit" className={classes.logo}>
+              NASM
+              </Typography>
+              <FontAwesomeIcon icon={['fas', 'dumbbell']} size={"3x"} />
+              <Typography variant="title" color="inherit" className={classes.logo}>
+              Trainer
+            </Typography>
+
+
             {auth && (
               <div>
                 <IconButton

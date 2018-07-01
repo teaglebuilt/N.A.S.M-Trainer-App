@@ -101,7 +101,8 @@ console.log(this.props.currentUser)
                         <Grid container spacing={24}>
                             <Grid item={4}>
                                 <UserStats currentUser={this.props.currentUser}
-                                onEdit={this.onEdit} />
+                                onEdit={this.onEdit}
+                                  />
                             </Grid>
                             {this.state.show ?
                                 <WorkoutForm

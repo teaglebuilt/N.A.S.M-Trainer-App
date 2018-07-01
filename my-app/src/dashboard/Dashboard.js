@@ -15,7 +15,7 @@ class Dashboard extends Component {
         workoutHistory: [],
         groupedExercises: {},
         arrayOfExercises: [],
-        displayCards: false
+        currentWorkoutEx: []
     }
 
 
@@ -54,6 +54,7 @@ getData = function() {
 }
  componentDidMount() {
  this.getData()
+
  }
 
 
@@ -100,33 +101,39 @@ loopGroupEx = function() {
     })
 }.bind(this)
 
-userHistory = function() {
-const workoutDB = fire.database().ref('workout')
-let currentUser = this.props.currentUser
-let workoutObject = this.state.groupedExercises
-let groupedEx = Object.values(workoutObject)
-workoutDB.on('value', snap => {
-    let workouts = snap.val()
-    let workoutArr = Object.values(workouts)
-      workoutArr.forEach( index => {
-          console.log(index)
-          currentUser.find( user => {
-              console.log(user.userId)
-             if(index.userId === user.userId) {
-                // {this.loopGroupEx()}
-             }
-        })
-  })
-})
-}.bind(this)
+
+  userHistory = function() {
+    const workoutDB = fire.database().ref('workout');
+    let currentUser = localStorage.getItem('user');
+    let workoutObject = this.state.groupedExercises;
+    let groupedEx = Object.values(workoutObject);
+    let workoutArr = [];
+    workoutDB.on('value', snap => {
+      //   let workouts = snap.val();
+      snap.forEach(x => {
+        let newObj = x.val(); // creating an array with key as a value in the object so it can be accessed later without an hassel
+        newObj.key = x.key;
+        workoutArr.push(newObj);
+      });
+    });
+    workoutArr.forEach(index => {
+        console.log(index.key)
+      if (index.userId === currentUser) {
+        this.loopGroupEx(index.key);
+      }
+    });
+  }.bind(this);
+
 
 render() {
+
         return(
 
             <div className="dashboard">
              <div className="workoutLog">
                 {this.userHistory()}
                 {this.loopGroupEx()}
+
              </div>
              <div className="chart">
                 <Chart />
