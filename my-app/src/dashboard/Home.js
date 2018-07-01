@@ -89,6 +89,7 @@ componentDidMount() {
 }
 
 render() {
+
 console.log(this.props.currentUser)
 
         return (
@@ -97,7 +98,8 @@ console.log(this.props.currentUser)
                 <MuiThemeProvider theme={theme}>
 
                     <div className="home-page">
-                        <NavBar showForm={this.showForm} />
+                        <NavBar showForm={this.showForm}
+                                 currentUser={this.props.currentUser} />
                         <Grid container spacing={24}>
                             <Grid item={4}>
                                 <UserStats currentUser={this.props.currentUser}

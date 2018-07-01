@@ -38,6 +38,10 @@ const styles = {
   logo: {
     fontFamily: "roboto",
     padding: 10
+  },
+  hello: {
+    marginLeft: 50,
+
   }
 };
 
@@ -69,12 +73,18 @@ class MenuAppBar extends React.Component {
     this.setState({ anchorEl: null });
   };
 
-
+helloUser = function() {
+let user = this.props.currentUser
+for( let prop in user) {
+  return(user[prop].firstName)
+}
+}.bind(this)
 
   render() {
     const { classes } = this.props;
     const { auth, anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    console.log(this.props.currentUser)
 
     return (
 
@@ -87,11 +97,9 @@ class MenuAppBar extends React.Component {
                 <AddIcon />
              </Button>
             </Tooltip>
-
             <Typography variant="title" color="inherit" className={classes.flex}>
               Create Workout
             </Typography>
-
              <Typography variant="title" color="inherit" className={classes.logo}>
               NASM
               </Typography>
@@ -99,7 +107,9 @@ class MenuAppBar extends React.Component {
               <Typography variant="title" color="inherit" className={classes.logo}>
               Trainer
             </Typography>
-
+            <Typography variant="subheading" color="inherit" className={classes.hello} >
+             Hello, {this.helloUser()}
+            </Typography>
 
             {auth && (
               <div>

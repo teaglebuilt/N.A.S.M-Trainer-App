@@ -47,7 +47,7 @@ getDate = function () {
 }.bind(this)
 
   render() {
-    console.log(this.props.object)
+
     return (
       <div>
         <Card className={this.props.classes.card}>
@@ -61,6 +61,9 @@ getDate = function () {
                 <div>
                   <Typography className={this.props.classes.pos} variant="headline" color="textSecondary">
                     {object.name}
+                  </Typography>
+                  <Typography className={this.props.classes.pos} variant="body 2" color="textSecondary">
+                    {object.description}
                   </Typography>
                 </div>
               )
