@@ -117,7 +117,6 @@ loopGroupEx = function() {
       });
     });
     workoutArr.forEach(index => {
-        console.log(index.key)
       if (index.userId === currentUser) {
         this.loopGroupEx(index.key);
       }

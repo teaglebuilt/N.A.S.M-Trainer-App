@@ -1,7 +1,7 @@
 .logo {
     padding: 20px;
-    width: 350px;
-    height: 200px;
+    width: 250px;
+    height: 100px;
 }
 .login-container {
     display: flex;
@@ -16,11 +16,10 @@
 .google {
     color: white
 }
-
 .loginContainerOne {
-    width: 450px;
+    width: 350px;
     margin: auto;
-    height: 600px;
+    /* height: 300px; */
     /* margin-top: 200px; */
     margin-right: 50px;
     margin-left: 50px;
@@ -31,18 +30,24 @@
     border-radius: 5%; */
 }
 .social-sign-in {
+    padding: 10px;
     width: 300px;
-    margin-left: 50px;
+    height: 200px;
+    margin-left: 100px;
     display: flex;
     flex-direction: column;
+    /* z-index: -1;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,1.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 1.5);
+    border-radius: 5%; */
 }
-.social {
-}
+
 
 .loginContainerTwo {
     width: 450px;
     margin-left: 100px;
-    height: 600px;
+    height: 500px;
     /* margin-top: 200px; */
     /* margin-right: 300px; */
     /* z-index: -1;
@@ -65,7 +70,7 @@ padding: 20px;
     padding-top: 20px;
     padding-left: 20px;
 }
-.logInpTitle {
+.logInTitle {
     padding-top: 20px;
     padding-left: 20px;
 }

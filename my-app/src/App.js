@@ -4,6 +4,7 @@ import fire, { auth, provider } from './config/fire';
 import Home from './dashboard/Home'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import theme from './styles/theme';
+import Register from './auth/Register'
 import Login from './auth/Login'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {  faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons'
@@ -47,6 +48,7 @@ authListener() {
         dbUser.on('value', snap => {
             let fbuser = snap.val()
             let userArray = Object.values(fbuser)
+
            let arr = []
            if(user === null) {
                return false
@@ -68,7 +70,7 @@ console.log(this.state.currentUser)
         <MuiThemeProvider theme={theme}>
         <div>
 
-    {this.state.user ? (<Home currentUser={this.state.currentUser}/>) : (<Login />)}
+    {this.state.user ? (<Home currentUser={this.state.currentUser}/>) : (<Register/>)}
 
         </div>
         </MuiThemeProvider>
