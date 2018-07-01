@@ -57,21 +57,36 @@ class Chart extends Component {
         }
     }
 
-goalData = function() {
+getGoal = function() {
     let goals = fire.database().ref('goal')
     goals.on('value', snap => {
-        console.log(snap.val())
         this.setState({ goals: snap.val() })
     })
 }.bind(this)
 
+getData = function() {
+let promises = []
+const goalDB = fire.database().ref('goalExercises')
+goalDB.on('value', snap => {
+    let goal = snap.val()
+    console.log(goal)
+})
+}.bind(this)
+
+addData = function(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+    });
+    chart.update();
+}.bind(this)
+
 componentDidMount() {
-    this.goalData()
+    this.getGoal()
+    this.getData()
 }
 
     render() {
-
-        console.log(this.state.goals)
         const { classes } = this.props;
          return (<div className="chart">
              <Paper className={classes.root} elevation={4}>

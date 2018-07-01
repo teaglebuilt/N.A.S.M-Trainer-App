@@ -39,7 +39,8 @@ class Home extends Component {
             selected: [],
             workoutArray: [],
             chosenExercises: [],
-            currentUser: []
+            currentUser: [],
+
         }
     }
 
@@ -51,6 +52,8 @@ class Home extends Component {
     setSelectedState = function (data) {
         this.setState({ selected: data })
     }.bind(this)
+
+
 
     setChosenExercises = function ( data ) {
         this.setState({ chosenExercises: data })
@@ -90,7 +93,7 @@ componentDidMount() {
 
 render() {
 
-console.log(this.props.currentUser)
+console.log(this.state.goalCount)
 
         return (
 
