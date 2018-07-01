@@ -80,10 +80,11 @@ class WorkoutForm extends Component {
     goalExercises = function (event) {
 
         let singleEx = this.state.allExercises
+
         let goalId = this.state.goalSelector
         let exercises = this.state.exercises
-        let tempArray = []
 
+        let tempArray = []
         for (let i = 0; i < singleEx.length; i++) {
             const currentEx = singleEx[i]
             exercises.map(ex => {
@@ -94,6 +95,8 @@ class WorkoutForm extends Component {
             this.setState({ possibleExercises: tempArray })
         }
     }.bind(this)
+
+
 
     // goal dropdown incubator
     handleChange(e) {
@@ -133,9 +136,10 @@ class WorkoutForm extends Component {
             chosenExercises: currentChosen,
             chosenStrings: selected
         })
-}
+    }
 
     render() {
+
 
         const { classes } = this.props;
 

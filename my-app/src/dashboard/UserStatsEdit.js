@@ -13,7 +13,7 @@ const styles = theme => ({
     position: 'absolute',
     width: theme.spacing.unit * 50,
     backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
+    boxShadow: theme.shadows[10],
     padding: theme.spacing.unit * 4,
   },
   formControl: {
@@ -48,8 +48,8 @@ class UserStatsEdit extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateStats = this.updateStats.bind(this)
-    // this.installStats = this.installStats.bind(this)
-    // this.addStats = this.addStats.bind(this)
+    this.installStats = this.installStats.bind(this)
+
   this.state = {
     open: false,
     weight: "",
@@ -61,17 +61,13 @@ class UserStatsEdit extends Component {
     this.setState({ open: true });
   }.bind(this)
 
-  // handleClose = function () {
-  //   this.setState({ open: false });
-  // }.bind(this)
-
   rand = function () {
     return Math.round(Math.random() * 20) - 10;
   }.bind(this)
 
   getModalStyle = function () {
-    const top = 50 + this.rand();
-    const left = 50 + this.rand();
+    const top = 50
+    const left = 50
 
     return {
       top: `${top}%`,
@@ -96,52 +92,25 @@ updateStats = () => {
   })
   this.setState({ open: false});
   this.props.setSelectedState({ updatedUser: currentUser })
+  this.installStats(currentUser)
 }
 
-// installStats = (user) => {
-//   let db = fire.database().ref(`user`)
-//   db.push(user)
-//   db.on('value', snap => {
-//     let dbUser = snap.val()
-//     for(let prop in dbUser) {
+installStats = (user) => {
 
-//     let userObject = dbUser[prop]
-//     if(userObject.userId === user.userId) {
-//        console.log(userObject)
+  let db = fire.database().ref(`user`)
+  db.on('value', snap => {
+    let dbUser = snap.val()
 
-//           this.addStats(userObject)
-
-//      }
-//     }
-//   })
-//   }
-
-//   addStats = (userObj) => {
-//   const userDB = fire.database().ref()
-
-
-//   }
-
-// updateStats = () => {
-// let currentUser = this.props.currentUser
-// const userRef = fire.database().ref('user');
-// userRef.on('value', snap => {
-//   let dbUser = snap.val()
-//   currentUser.forEach( user => {
-//     for(let prop in dbUser) {
-//       let userObject = dbUser[prop]
-//       if(userObject.userId === user.userId) {
-//           userObject.update(
-//             {"BMI": `${this.state.bmi}`}
-//           )
-//       }
-//     }
-//   })
-// })
-
-// this.setState({ open: false });
-
-// }
+    for(let prop in dbUser) {
+    let userObject = dbUser[prop]
+      user.find( i => {
+        if(userObject.userId === i.userId) {
+            // ???????
+        }
+      })
+    }
+  })
+  }
 
 
   render() {
@@ -165,7 +134,7 @@ updateStats = () => {
           open={this.state.open}
           onClose={this.handleClose}
         >
-          <div  className={classes.paper}>
+          <div style={this.getModalStyle()}  className={classes.paper}>
             <Typography variant="title" id="modal-title">
               Text
             </Typography>
