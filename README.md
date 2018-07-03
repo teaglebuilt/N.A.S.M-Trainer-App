@@ -7,3 +7,38 @@ The motivation that comes with a paid trainer obviously will not be present, but
 
 
 ![Alt text](https://preview.ibb.co/b7djvT/nasm_logo_one_copy.png "NASM Trainer App Logo")
+
+## **Developed With**
+
+![Alt text](https://image.ibb.co/gBMcUy/React_icon_svg_e1498055414258.png "React")
+
+![Alt text](https://image.ibb.co/hFcO2J/firebase_logo_402_F407_EE0_seeklogo_com.png "Firebase")
+
+![Alt text](https://image.ibb.co/dKqhwd/material_ui.png "Material UI")
+
+_________________
+
+## Instructions
+
+```
+git clone https://github.com/teaglebuilt/N.A.S.M-Trainer-App.git
+
+npm install
+
+```
+
++ ## Dependencies
+  - Material UI
+  - React FontAwesome
+  - Firebase
+  - React Dual List Box
+  - Typeface Roboto
+
+## **Acomplishments**
+
+### Persist to Firebase
+### Dynamically pass data from one component to the next
+
+User Authentication
+
+
