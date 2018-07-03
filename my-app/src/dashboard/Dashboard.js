@@ -61,6 +61,7 @@ getData = function() {
 combineExercises = function() {
 
     let workoutHistory = this.state.workoutHistory
+
     if( workoutHistory) {
 
         let newArray = Object.values(workoutHistory)
